@@ -1,0 +1,73 @@
+{
+	// Overall layout configuration
+	"position": "top", // Waybar position (top|bottom|left|right)
+	"modules-left": [
+		"hyprland/workspaces",
+		"hyprland/window"
+	],
+	"modules-center": [
+		"clock"
+	],
+	"modules-right": [
+		"keyboard-state",
+		"pulseaudio",
+		"network",
+		"hyprland/language",
+		"custom/power"
+	],
+	// Modules configuration
+	"hyprland/workspaces": {
+		"disable-scroll": true,
+		"all-outputs": true,
+		"warp-on-scroll": false,
+		"format": "{name}"
+	},
+	"keyboard-state": {
+		"numlock": true,
+		"capslock": true,
+		"format": "{name} {icon}",
+		"format-icons": {
+			"locked": "",
+			"unlocked": ""
+		}
+	},
+        "idle_inhibitor": {
+        "format": "{icon}",
+        "format-icons": {
+            "activated": "",
+            "deactivated": ""
+        }
+    },
+	"clock": {
+		"format": "{:%a %d %H:%M}",
+		"on-click": "kitty calcure"
+		},
+	"network": {
+		"format-wifi": "<span size='13000'></span>",
+		"format-ethernet": "<span size='13000'></span>",
+		"format-disconnected": "<span size='13000'></span>",
+		"tooltip-format-wifi": "{essid} ({signalStrength}%) ",
+		"tooltip-format-ethernet": "{ifname} 🖧 ",
+		"tooltip-format-disconnected": "Disconnected",
+		"on-click": "kitty nmtui"
+	},
+	"pulseaudio": {
+		"format": "{icon} {volume}%",
+		"format-muted": " {format_source}",
+		"format-source": " {volume}%",
+		"format-source-muted": "",
+		"on-click": "pavucontrol"
+	},
+	"custom/power": {
+		"format" : "⏻ ",
+		"tooltip": false,
+		"menu": "on-click",
+		"menu-file": "$HOME/.config/waybar/power_menu.xml", // Menu file in resources folder
+		"menu-actions": {
+			"shutdown": "shutdown",
+			"reboot": "reboot",
+			"suspend": "systemctl suspend",
+			"hibernate": "systemctl hibernate"
+		}
+    }
+}

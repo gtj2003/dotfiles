@@ -1,0 +1,79 @@
+/*
+	My own wofi configuration file!
+	It uses catpuccin latte theme for waybar, cause they share 
+	same 'style.css' configuration system :)
+*/
+/* Importing color palette from waybar folder*/
+@import ".config/waybar/latte.css";
+
+/* Font parameters */
+*{
+	font-family: 'FiraMono Nerd Font', monospace;
+	font-size: 18px;
+}
+
+window {
+	margin: 0px;
+	padding: 10px;
+	border: 2px solid @lavender;
+	border-radius: 8px;
+}
+
+#inner-box {
+	margin: 5px;
+	padding: 10px;
+	border: none;
+	background-color: @base;
+}
+
+#outer-box {
+	margin: 5px;
+	padding: 10px;
+	border: none;
+	background-color: @base;
+}
+
+#scroll {
+	margin: 0px;
+	border: none;
+	background-color: @base;
+}
+
+#input {
+	margin: 5px 15px;
+	padding: 10px;
+	border: 2px solid @lavender;
+	border-radius: 5px;
+	color: @text;
+	background-color: @base;
+}
+
+/* Text parameters */
+#text {
+	margin: 5px;
+	border: none;
+	color: @text;
+}
+
+#entry {
+	background-color: @base;
+}
+
+#entry arrow {
+	border: none;
+	color: @rosewater;
+}
+
+/* Selected Entry */
+#entry:selected {
+	border: 0.11em solid @lavender;
+	border-radius: 5px;
+}
+
+#entry:selected #text {
+	color: @sapphire;
+}
+
+#entry:drop(active) {
+	background-color: @overlay2!important;
+}
